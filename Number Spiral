@@ -1,0 +1,93 @@
+#include<bits/stdc++.h>
+ 
+using namespace std;
+ 
+ 
+ 
+long long n;
+void findit(long long x, long long y,long long sum,long long n)
+{
+	//cout<<"in here";
+	if(x==y)
+	{
+		cout<<sum<<"\n";
+	}
+	else if((n%2==0)&&(x>y))
+	{
+	//cout<<"1";
+		while(x!=y)
+		{
+			sum++;
+			x--;
+		}
+		cout<<sum<<"\n";
+	}
+	else if((n%2==0)&&(x<y))
+	{
+	//cout<<"2";
+		while(x!=y)
+		{
+			sum--;
+			y--;
+		}
+		cout<<sum<<"\n";
+	}
+	else if((n%2==1)&&(x<y))
+	{
+	//cout<<"3";
+		while(x!=y)
+		{
+			sum++;
+			y--;
+		}
+		cout<<sum<<"\n";
+	}
+	else
+	{
+	//cout<<"4";
+		while(x!=y)
+		{
+			sum--;
+			x--;
+		}
+		cout<<sum<<"\n";
+	}
+	
+}
+ 
+ 
+ 
+ 
+int main()
+{
+	long long t;
+	long long x,y;
+	//long long arr[n][n] = {0};
+	cin>>t;
+	while(t--)
+	{
+		cin>>x>>y;
+		n = x>y?x:y;
+		//cout<<n<<"\n";
+		//long long temp_n = n;
+		
+		
+		long long i =2;
+		long long sum = 1;
+		//arr[1][1] = 1;
+		//while(--temp_n)
+		{
+			
+			//sum = sum+(2*(i-1));
+			sum = (n*n)-(n-1);
+			
+			
+		//i++; 
+		}
+		
+		findit(x,y,sum,n);
+		
+		}
+	
+return 0;
+}
